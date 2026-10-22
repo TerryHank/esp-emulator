@@ -833,3 +833,8 @@ tar -xzf esp-emu-<version>-<platform>.tar.gz
 cp esp-emu-<version>-<platform>/esp-emu ~/.local/bin/
 ~/.local/bin/esp-emu --help
 ```
+
+
+## Waveshare 小智 / VESC 固件
+
+本仓库另归档了微雪 ESP32-S3-Touch-LCD-3.5 的[小智与 VESC 固件源码](firmware/xiaozhi-waveshare/)及[各版 Releases](https://github.com/TerryHank/esp-emulator/releases)。最新语音候选版已知卡顿，稳定基线与回退版本请见版本索引。

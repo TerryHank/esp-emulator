@@ -1,0 +1,357 @@
+[
+  {
+    "id": "touch-wifi",
+    "title": "触屏配网正式版（VESC 之前）",
+    "folder": "backups/20261022-023956-before-vesc",
+    "full": "xiaozhi-v2.4.2-touch-wifi-setup.bin",
+    "source": "source-full-with-locked-dependencies.tar.gz",
+    "status": "此前确认正常",
+    "firmware_asset": "touch-wifi-firmware.zip",
+    "binaries": {
+      "firmware-full.bin": {
+        "bytes": 10052777,
+        "sha256": "2ffaf3fbc48ded6cdd078426c29f6ce2da4e709690a1f3f2159a398c6aba807d"
+      },
+      "partition-table.bin": {
+        "bytes": 3072,
+        "sha256": "4811619cacae08ef2e0e71b7220c6033a346ca5da7ca179082408c963ef530b5"
+      },
+      "generated_assets.bin": {
+        "bytes": 1664169,
+        "sha256": "a24da1d7717491063ddee34ca736cb979314115c7ef841ce726958350d403a24"
+      }
+    },
+    "source_asset": "touch-wifi-source.zip"
+  },
+  {
+    "id": "vesc",
+    "title": "VESC 仪表首版",
+    "folder": "vesc",
+    "app": "xiaozhi-v2.4.2-vesc-app.bin",
+    "full": "xiaozhi-v2.4.2-vesc-full.bin",
+    "source": "xiaozhi-vesc-full-source.tar.gz",
+    "status": "此前确认正常；未连接实际 VESC",
+    "firmware_asset": "vesc-firmware.zip",
+    "binaries": {
+      "app.bin": {
+        "bytes": 3044704,
+        "sha256": "d2bdd14bd75eba65e480a931462af5ff43e97e8e389568437667d8bca9eb6379"
+      },
+      "firmware-full.bin": {
+        "bytes": 10052777,
+        "sha256": "ac35f6791c5a3b624d5af606c298e4f829412c355a7bf54ba319d89b53b924ae"
+      },
+      "partition-table.bin": {
+        "bytes": 3072,
+        "sha256": "4811619cacae08ef2e0e71b7220c6033a346ca5da7ca179082408c963ef530b5"
+      },
+      "generated_assets.bin": {
+        "bytes": 1664169,
+        "sha256": "a24da1d7717491063ddee34ca736cb979314115c7ef841ce726958350d403a24"
+      },
+      "bootloader.bin": {
+        "bytes": 16704,
+        "sha256": "fcc34cb93776b27582e81b8ee6c32b8cbc8de18cd6dc29f183d0d82b4c5d27be"
+      }
+    },
+    "source_asset": "vesc-source.zip"
+  },
+  {
+    "id": "skins",
+    "title": "早期六种皮肤版",
+    "folder": "skins",
+    "app": "xiaozhi-v2.4.2-vesc-skins-app.bin",
+    "full": "xiaozhi-v2.4.2-vesc-skins-full.bin",
+    "source_dir": "work/dashboard-skins/xiaozhi-esp32",
+    "status": "历史界面版本，随后被完整 CarCYD 布局替代",
+    "firmware_asset": "skins-firmware.zip",
+    "binaries": {
+      "app.bin": {
+        "bytes": 3048384,
+        "sha256": "ca3cbc656372f702326b20e1a47e74524313c7d5387797dc14946f1d12941482"
+      },
+      "firmware-full.bin": {
+        "bytes": 10052777,
+        "sha256": "849e412bf96ae85d890b2700782f4f60dd94e4eb439c1ee055064791fd53fb4c"
+      },
+      "partition-table.bin": {
+        "bytes": 3072,
+        "sha256": "4811619cacae08ef2e0e71b7220c6033a346ca5da7ca179082408c963ef530b5"
+      },
+      "generated_assets.bin": {
+        "bytes": 1664169,
+        "sha256": "a24da1d7717491063ddee34ca736cb979314115c7ef841ce726958350d403a24"
+      },
+      "bootloader.bin": {
+        "bytes": 16704,
+        "sha256": "6b843576635550654bd9483f0772c5009c7b2bf2cca647006e9eff87c26be5d8"
+      }
+    },
+    "source_asset": "skins-source.zip"
+  },
+  {
+    "id": "carcyd-original",
+    "title": "CarCYD 原版中文对照",
+    "folder": "carcyd-original",
+    "app": "carcyd-original-zh-s3-app.bin",
+    "source_dir": "work/carcyd-original/project",
+    "status": "原版界面对照，不包含完整小智融合功能",
+    "firmware_asset": "carcyd-original-firmware.zip",
+    "binaries": {
+      "app.bin": {
+        "bytes": 1066624,
+        "sha256": "a7e80d80f314f2dc699afadf6795b2dedf21b8cca4a16a691e377b4b7c34adae"
+      }
+    },
+    "source_asset": "carcyd-original-source.zip"
+  },
+  {
+    "id": "carcyd-functional",
+    "title": "中文 CarCYD 功能融合版",
+    "folder": "carcyd-functional",
+    "app": "xiaozhi-carcyd-zh-native-app.bin",
+    "full": "xiaozhi-carcyd-zh-native-full.bin",
+    "source": "xiaozhi-carcyd-zh-native-source.tar.gz",
+    "status": "此前确认显示、触摸、对话、识图正常",
+    "firmware_asset": "carcyd-functional-firmware.zip",
+    "binaries": {
+      "app.bin": {
+        "bytes": 3819680,
+        "sha256": "c7d64b4bd431f4d23e655731034df5bbd41058e881e3f622b4d81c892b94e833"
+      },
+      "firmware-full.bin": {
+        "bytes": 10052777,
+        "sha256": "a7a6b4fbe07f71839efe94e82f97fa95d5f5818f3e57c6513a4aa23356599670"
+      },
+      "partition-table.bin": {
+        "bytes": 3072,
+        "sha256": "4811619cacae08ef2e0e71b7220c6033a346ca5da7ca179082408c963ef530b5"
+      },
+      "generated_assets.bin": {
+        "bytes": 1664169,
+        "sha256": "a24da1d7717491063ddee34ca736cb979314115c7ef841ce726958350d403a24"
+      },
+      "bootloader.bin": {
+        "bytes": 16704,
+        "sha256": "ee4c3c5e0403563ca0f89fbde22e6a0d2752160bf758081fe4300a937af66f9e"
+      }
+    },
+    "source_asset": "carcyd-functional-source.zip"
+  },
+  {
+    "id": "carcyd-fast",
+    "title": "首轮高刷新版",
+    "folder": "carcyd-fast",
+    "app": "xiaozhi-carcyd-zh-fast-app.bin",
+    "full": "xiaozhi-carcyd-zh-fast-full.bin",
+    "source": "xiaozhi-carcyd-zh-fast-source.tar.gz",
+    "status": "此前确认流畅度改善，声音识图正常",
+    "firmware_asset": "carcyd-fast-firmware.zip",
+    "binaries": {
+      "app.bin": {
+        "bytes": 3819696,
+        "sha256": "0a6a21a2f95b8a093b3d585496130592094a0cb973fd4147045fb76304732b2d"
+      },
+      "firmware-full.bin": {
+        "bytes": 10052777,
+        "sha256": "5879b66c1a6c670f1510c359322100328ee12b577ce1f6ba130ff9b5f75e85af"
+      },
+      "partition-table.bin": {
+        "bytes": 3072,
+        "sha256": "4811619cacae08ef2e0e71b7220c6033a346ca5da7ca179082408c963ef530b5"
+      },
+      "generated_assets.bin": {
+        "bytes": 1664169,
+        "sha256": "a24da1d7717491063ddee34ca736cb979314115c7ef841ce726958350d403a24"
+      },
+      "bootloader.bin": {
+        "bytes": 16704,
+        "sha256": "590f60f5e84242bcf5633368e3a638db1a353756cbecc3ba1d0c01301ca0c926"
+      }
+    },
+    "source_asset": "carcyd-fast-source.zip"
+  },
+  {
+    "id": "carcyd-tuning",
+    "title": "刷新性能优化正式版",
+    "folder": "carcyd-tuning",
+    "app": "xiaozhi-carcyd-zh-tuned-app.bin",
+    "full": "xiaozhi-carcyd-zh-tuned-full.bin",
+    "source": "xiaozhi-carcyd-zh-tuned-source.tar.gz",
+    "status": "此前确认流畅、颜色、触摸、声音、识图、配网正常",
+    "firmware_asset": "carcyd-tuning-firmware.zip",
+    "binaries": {
+      "app.bin": {
+        "bytes": 3911632,
+        "sha256": "99283478b630eea3b6568936f3bc021c1bef51e0892ec0d913027fc1d4bc37c7"
+      },
+      "firmware-full.bin": {
+        "bytes": 10052777,
+        "sha256": "6a852601a117eeb4f4eed6863b840f84352a9614ebb81ba34af11db7501d9259"
+      },
+      "partition-table.bin": {
+        "bytes": 3072,
+        "sha256": "4811619cacae08ef2e0e71b7220c6033a346ca5da7ca179082408c963ef530b5"
+      },
+      "generated_assets.bin": {
+        "bytes": 1664169,
+        "sha256": "a24da1d7717491063ddee34ca736cb979314115c7ef841ce726958350d403a24"
+      },
+      "bootloader.bin": {
+        "bytes": 16704,
+        "sha256": "590f60f5e84242bcf5633368e3a638db1a353756cbecc3ba1d0c01301ca0c926"
+      }
+    },
+    "source_asset": "carcyd-tuning-source.zip"
+  },
+  {
+    "id": "carcyd-orb",
+    "title": "光球动效初版",
+    "folder": "carcyd-orb",
+    "app": "xiaozhi-carcyd-zh-orb-app.bin",
+    "full": "xiaozhi-carcyd-zh-orb-full.bin",
+    "source": "xiaozhi-carcyd-zh-orb-source.tar.gz",
+    "status": "历史版本，声音响应及状态过渡随后优化",
+    "firmware_asset": "carcyd-orb-firmware.zip",
+    "binaries": {
+      "app.bin": {
+        "bytes": 3917824,
+        "sha256": "4499a354a7ffe82b346235bf99877e51b083116048485ba4b57d6e53055877e8"
+      },
+      "firmware-full.bin": {
+        "bytes": 10052777,
+        "sha256": "7988a0be82144f68ebaeb74ebd8eff70ef17139765e9e848c07c6396de73c8be"
+      },
+      "partition-table.bin": {
+        "bytes": 3072,
+        "sha256": "4811619cacae08ef2e0e71b7220c6033a346ca5da7ca179082408c963ef530b5"
+      },
+      "generated_assets.bin": {
+        "bytes": 1664169,
+        "sha256": "a24da1d7717491063ddee34ca736cb979314115c7ef841ce726958350d403a24"
+      },
+      "bootloader.bin": {
+        "bytes": 16704,
+        "sha256": "590f60f5e84242bcf5633368e3a638db1a353756cbecc3ba1d0c01301ca0c926"
+      }
+    },
+    "source_asset": "carcyd-orb-source.zip"
+  },
+  {
+    "id": "carcyd-orb-smooth",
+    "title": "光球平滑版",
+    "folder": "carcyd-orb-smooth",
+    "app": "xiaozhi-carcyd-zh-orb-smooth-app.bin",
+    "full": "xiaozhi-carcyd-zh-orb-smooth-full.bin",
+    "source": "xiaozhi-carcyd-zh-orb-smooth-source.tar.gz",
+    "status": "过渡自然，但光球遮字问题随后修复",
+    "firmware_asset": "carcyd-orb-smooth-firmware.zip",
+    "binaries": {
+      "app.bin": {
+        "bytes": 3920160,
+        "sha256": "319fa1fa5a21e14711ac4bd0e23803d9c1e295ca1185a6250fb1c9f9567d9b45"
+      },
+      "firmware-full.bin": {
+        "bytes": 10052777,
+        "sha256": "4b6f05739ae585c1cedb13a6c21a287a5e231ae0b53922dc806c129553fff153"
+      },
+      "partition-table.bin": {
+        "bytes": 3072,
+        "sha256": "4811619cacae08ef2e0e71b7220c6033a346ca5da7ca179082408c963ef530b5"
+      },
+      "generated_assets.bin": {
+        "bytes": 1664169,
+        "sha256": "a24da1d7717491063ddee34ca736cb979314115c7ef841ce726958350d403a24"
+      },
+      "bootloader.bin": {
+        "bytes": 16704,
+        "sha256": "590f60f5e84242bcf5633368e3a638db1a353756cbecc3ba1d0c01301ca0c926"
+      }
+    },
+    "source_asset": "carcyd-orb-smooth-source.zip"
+  },
+  {
+    "id": "carcyd-orb-layout",
+    "title": "光球布局稳定版",
+    "folder": "carcyd-orb-layout",
+    "app": "xiaozhi-carcyd-zh-orb-layout-app.bin",
+    "full": "xiaozhi-carcyd-zh-orb-layout-full.bin",
+    "source": "xiaozhi-carcyd-zh-orb-layout-source.tar.gz",
+    "status": "用户确认横竖屏长回复、历史滑动、照片均正常；语音优化前稳定基线",
+    "firmware_asset": "carcyd-orb-layout-firmware.zip",
+    "binaries": {
+      "app.bin": {
+        "bytes": 3920416,
+        "sha256": "0b794561322defa928f5e95837798fd5823d13de27b07436791cc890a9e6aa87"
+      },
+      "firmware-full.bin": {
+        "bytes": 10052777,
+        "sha256": "403790b31fe90f85c966712fe20779513a105b1e60cc0ee9d1e9d3a995966b1c"
+      },
+      "partition-table.bin": {
+        "bytes": 3072,
+        "sha256": "4811619cacae08ef2e0e71b7220c6033a346ca5da7ca179082408c963ef530b5"
+      },
+      "generated_assets.bin": {
+        "bytes": 1664169,
+        "sha256": "a24da1d7717491063ddee34ca736cb979314115c7ef841ce726958350d403a24"
+      },
+      "bootloader.bin": {
+        "bytes": 16704,
+        "sha256": "590f60f5e84242bcf5633368e3a638db1a353756cbecc3ba1d0c01301ca0c926"
+      }
+    },
+    "source_asset": "carcyd-orb-layout-source.zip"
+  },
+  {
+    "id": "speech-stage1",
+    "title": "第一轮语音优化（当前回退运行）",
+    "folder": "carcyd-speech/stage1",
+    "app": "xiaozhi-carcyd-zh-speech-app.bin",
+    "status": "用户此前确认正常/轻声对话、主动打断、识图正常；2026-10-22 已重新回退到此版",
+    "firmware_asset": "speech-stage1-firmware.zip",
+    "binaries": {
+      "app.bin": {
+        "bytes": 3921680,
+        "sha256": "7764ee695b31a125b740b0bed309a688118bdf58a2893755d5cf577eb13a51bf"
+      },
+      "generated_assets.bin": {
+        "bytes": 1664169,
+        "sha256": "a24da1d7717491063ddee34ca736cb979314115c7ef841ce726958350d403a24"
+      }
+    }
+  },
+  {
+    "id": "speech-rc1",
+    "title": "最新语音优化候选（已知卡顿）",
+    "folder": "carcyd-speech",
+    "app": "xiaozhi-carcyd-zh-speech-app.bin",
+    "full": "xiaozhi-carcyd-zh-speech-full.bin",
+    "source": "xiaozhi-carcyd-zh-speech-source.tar.gz",
+    "status": "编译和63项测试通过，但用户报告整机严重卡顿；运行日志存在编码队列满/音频丢帧；已回退，不作为稳定推荐",
+    "firmware_asset": "speech-rc1-firmware.zip",
+    "binaries": {
+      "app.bin": {
+        "bytes": 3925280,
+        "sha256": "e9630faaf82931c3ea9af8d259cbdb4075cbb9f4316c9399478fafa4b9882c5e"
+      },
+      "firmware-full.bin": {
+        "bytes": 13074529,
+        "sha256": "2b70488f0fd81efd1fe6c0ffa58d779954e08065485c429f1acbe753f8509638"
+      },
+      "partition-table.bin": {
+        "bytes": 3072,
+        "sha256": "4811619cacae08ef2e0e71b7220c6033a346ca5da7ca179082408c963ef530b5"
+      },
+      "generated_assets.bin": {
+        "bytes": 4685921,
+        "sha256": "6749216e522596dcc153095b1de6f44cf14b0d180cfffad5262392d0900c20e6"
+      },
+      "bootloader.bin": {
+        "bytes": 16704,
+        "sha256": "590f60f5e84242bcf5633368e3a638db1a353756cbecc3ba1d0c01301ca0c926"
+      }
+    },
+    "source_asset": "speech-rc1-source.zip"
+  }
+]
