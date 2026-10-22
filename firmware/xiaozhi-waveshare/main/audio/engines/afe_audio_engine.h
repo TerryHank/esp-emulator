@@ -42,10 +42,6 @@ public:
     void OnOutput(std::function<void(std::vector<int16_t>&& data)> callback) override;
     void OnVadStateChange(std::function<void(bool speaking)> callback) override;
 
-    void OnLocalCommandDetected(std::function<void(const std::string&)> callback) override {
-        local_command_callback_ = std::move(callback);
-    }
-    bool KeepInputAfterWake() const override { return local_commands_ready_; }
     void EncodeWakeWordData() override;
     bool GetWakeWordOpus(std::vector<uint8_t>& opus) override;
     const std::string& GetLastDetectedWakeWord() const override { return last_detected_wake_word_; }
@@ -82,10 +78,6 @@ private:
     std::atomic<uint32_t> control_generation_{0};
     WakeDetector wake_detector_ = WakeDetector::kNone;
 
-    bool ns_ready_ = false;
-    bool local_commands_ready_ = false;
-    std::atomic<bool> local_commands_active_{false};
-    std::function<void(const std::string&)> local_command_callback_;
     std::unique_ptr<CustomWakeWord> custom_wake_word_;
     std::vector<std::string> wake_words_;
     std::string last_detected_wake_word_;

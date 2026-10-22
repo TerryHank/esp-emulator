@@ -151,12 +151,6 @@ void SystemInfo::PrintHeapStats() {
     int free_sram = heap_caps_get_free_size(MALLOC_CAP_INTERNAL);
     int min_free_sram = heap_caps_get_minimum_free_size(MALLOC_CAP_INTERNAL);
     ESP_LOGI(TAG, "free sram: %u minimal sram: %u", free_sram, min_free_sram);
-#if CONFIG_WAVESHARE_SPEECH_ENHANCEMENT
-    ESP_LOGI(TAG, "PSRAM free=%u largest=%u minimum=%u",
-             (unsigned)heap_caps_get_free_size(MALLOC_CAP_SPIRAM),
-             (unsigned)heap_caps_get_largest_free_block(MALLOC_CAP_SPIRAM),
-             (unsigned)heap_caps_get_minimum_free_size(MALLOC_CAP_SPIRAM));
-#endif
 }
 
 void SystemInfo::PrintPmLocks() {

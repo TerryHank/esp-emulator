@@ -148,31 +148,6 @@ void carcyd_show_chat(bool show) {
         dashboard->ShowChat(show);
 }
 bool carcyd_chat_visible() { return dashboard && dashboard->IsChatPage(); }
-void carcyd_local_command(const std::string& action) {
-    DisplayLockGuard lock(Board::GetInstance().GetDisplay());
-    ESP_LOGI("LocalVoice", "Executed: %s", action.c_str());
-    if (action == "chat")
-        carcyd_show_chat(true);
-    else if (action == "dashboard" || action == "voltage") {
-        ui::navigate(ui::PageId::Dashboard);
-        if (action == "voltage") {
-            auto data = carcyd_snapshot();
-            char text[32];
-            if (data.online)
-                snprintf(text, sizeof(text), "%.1f V", data.values.voltage);
-            else
-                snprintf(text, sizeof(text), "未连接 VESC");
-            ui::toast(core::Severity::Info, "电池电压", text);
-        }
-    } else if (action == "settings")
-        ui::navigate(ui::PageId::Settings);
-    else if (action == "stop") {
-        auto& app = Application::GetInstance();
-        if (app.GetDeviceState() == kDeviceStateSpeaking ||
-            app.GetDeviceState() == kDeviceStateListening)
-            app.ToggleChatState();
-    }
-}
 void carcyd_open_wifi() {
     carcyd_show_chat(false);
     Application::GetInstance().Schedule(

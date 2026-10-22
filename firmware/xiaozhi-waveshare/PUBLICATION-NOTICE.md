@@ -9,3 +9,5 @@ MiniBike 上游 https://github.com/Cyberj812/MiniBike-Stats
 光球来自用户提供的 ESP32S3_LVGL_Canvas_Orb 工程，原有说明保存在板级 LICENSE-Orb。
 
 公开包省略可重建依赖缓存、构建缓存、整片设备 Flash、个人运行日志、NVS 和网络配置。dependencies.lock 与实际构建配置保留。两个上游 MQTT 文档中的 AES 示例改为零值；字体生成注释中的本机命令路径已省略，功能代码和字形数组不变。
+
+历史版本：光球布局稳定版。状态：用户确认横竖屏长回复、历史滑动、照片均正常；语音优化前稳定基线。

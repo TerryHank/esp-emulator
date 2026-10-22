@@ -9,7 +9,6 @@
 #include "touch_wifi_setup.h"
 #include "vesc_service.h"
 #include "waveshare_audio_codec.h"
-#include "carcyd_port.h"
 #include "waveshare_display.h"
 #include "wifi_board.h"
 
@@ -446,9 +445,6 @@ public:
         InitializeCamera();
         InitializeOrientation();
         InitializeTools();
-        Application::GetInstance().GetAudioService().OnLocalCommandDetected([](const std::string& action) {
-            Application::GetInstance().Schedule([action]() { carcyd_local_command(action); });
-        });
         GetBacklight()->RestoreBrightness();
     }
 

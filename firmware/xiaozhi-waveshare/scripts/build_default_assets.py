@@ -856,18 +856,8 @@ def main():
         print("Please select appropriate CONFIG_SR_MN_* options in menuconfig, or disable USE_CUSTOM_WAKE_WORD")
         sys.exit(1)
     
-    with open(args.sdkconfig, encoding="utf-8") as config_stream:
-        selected = config_stream.read()
-    local_commands = 'CONFIG_WAVESHARE_LOCAL_VOICE_COMMANDS=y' in selected
-    # Frontend and local-command models share the existing packed model resource.
-    if 'CONFIG_WAVESHARE_SPEECH_ENHANCEMENT=y' in selected and 'CONFIG_SR_NSN_NSNET2=y' in selected:
-        ns_path = os.path.join(args.esp_sr_model_path, 'nsnet_model', 'nsnet2')
-        if not os.path.isdir(ns_path):
-            raise ValueError(f"NSNet2 model missing: {ns_path}")
-        wakenet_model_paths.append(ns_path)
-        print("  frontend model: nsnet2")
-    # 3. Package MultiNet for a custom wake phrase or local commands after WakeNet.
-    if wake_word_config['use_custom_wake_word'] or local_commands:
+    # 3. Only package multinet models if USE_CUSTOM_WAKE_WORD=y
+    if wake_word_config['use_custom_wake_word']:
         multinet_model_paths = get_multinet_model_paths(multinet_model_names, args.esp_sr_model_path)
     elif multinet_model_names:
         print(f"  Note: Found multinet models {multinet_model_names} but USE_CUSTOM_WAKE_WORD is disabled, skipping")
@@ -922,20 +912,6 @@ def main():
         print(f"  wake word language: {language}")
         print(f"  wake word threshold: {custom_wake_word_config['threshold']}")
     
-    if local_commands:
-        if not multinet_model_paths:
-            raise ValueError("Local voice commands require a selected MultiNet model")
-        multinet_model_info = {
-            "language": "cn", "duration": 3000, "threshold": 0.2,
-            "commands": [
-                {"command": "da kai yi biao", "text": "打开仪表", "action": "dashboard"},
-                {"command": "fan hui xiao zhi", "text": "返回小智", "action": "chat"},
-                {"command": "xian shi dian ya", "text": "显示电压", "action": "voltage"},
-                {"command": "da kai she zhi", "text": "打开设置", "action": "settings"},
-                {"command": "ting zhi bo bao", "text": "停止播报", "action": "stop"}
-            ]
-        }
-
     # Check if we have anything to build
     if not wakenet_model_paths and not multinet_model_paths and not text_font_path and not emoji_collection_path and not extra_files_path and not multinet_model_info:
         print("Warning: No assets to build (no SR models, text font, emoji collection, extra files, or custom wake word)")

@@ -15,8 +15,7 @@ class AudioEngine {
 public:
     virtual ~AudioEngine() = default;
 
-    virtual bool Initialize(AudioCodec* codec, int frame_duration_ms,
-                            srmodel_list_t* models_list) = 0;
+    virtual bool Initialize(AudioCodec* codec, int frame_duration_ms, srmodel_list_t* models_list) = 0;
     virtual void Feed(std::vector<int16_t>&& data) = 0;
 
     virtual void EnableWakeWordDetection(bool enable) = 0;
@@ -32,9 +31,6 @@ public:
     virtual void OnWakeWordDetected(std::function<void(const std::string& wake_word)> callback) = 0;
     virtual void OnOutput(std::function<void(std::vector<int16_t>&& data)> callback) = 0;
     virtual void OnVadStateChange(std::function<void(bool speaking)> callback) = 0;
-
-    virtual void OnLocalCommandDetected(std::function<void(const std::string&)>) {}
-    virtual bool KeepInputAfterWake() const { return false; }
 
     virtual void EncodeWakeWordData() = 0;
     virtual bool GetWakeWordOpus(std::vector<uint8_t>& opus) = 0;

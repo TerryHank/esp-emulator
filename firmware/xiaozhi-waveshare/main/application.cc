@@ -121,7 +121,6 @@ void Application::Initialize() {
                 break;
             }
             case NetworkEvent::Connected: {
-                network_available_ = true;
                 std::string msg = Lang::Strings::CONNECTED_TO;
                 msg += data;
                 display->ShowNotification(msg.c_str(), 30000);
@@ -129,7 +128,6 @@ void Application::Initialize() {
                 break;
             }
             case NetworkEvent::Disconnected:
-                network_available_ = false;
                 xEventGroupSetBits(event_group_, MAIN_EVENT_NETWORK_DISCONNECTED);
                 break;
             case NetworkEvent::WifiConfigModeEnter:
@@ -160,18 +158,6 @@ void Application::Initialize() {
         }
     });
 
-#if CONFIG_WAVESHARE_LOCAL_VOICE_COMMANDS
-    // Local commands and fonts are available even on a cold boot without Wi-Fi.
-    // An explicitly queued resource update keeps its original online update flow.
-    Settings pending_assets("assets", false);
-    auto& local_assets = Assets::GetInstance();
-    if (pending_assets.GetString("download_url").empty() && local_assets.partition_valid() &&
-        local_assets.Apply()) {
-        assets_version_checked_ = true;
-        audio_service_.EnableWakeWordDetection(true);
-        ESP_LOGI(TAG, "Local speech ready before network startup");
-    }
-#endif
     // Start network asynchronously
     board.StartNetwork();
 
@@ -823,12 +809,6 @@ void Application::HandleStopListeningEvent() {
 }
 
 void Application::HandleWakeWordDetectedEvent() {
-#if CONFIG_WAVESHARE_LOCAL_VOICE_COMMANDS
-    if (!network_available_.load()) {
-        ESP_LOGI(TAG, "Offline wake: local commands remain available");
-        return;
-    }
-#endif
     if (!protocol_) {
         return;
     }
