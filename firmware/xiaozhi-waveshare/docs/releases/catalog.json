@@ -308,7 +308,7 @@
     "title": "第一轮语音优化（当前回退运行）",
     "folder": "carcyd-speech/stage1",
     "app": "xiaozhi-carcyd-zh-speech-app.bin",
-    "status": "用户此前确认正常/轻声对话、主动打断、识图正常；2026-10-22 已重新回退到此版",
+    "status": "用户已确认回退后不卡顿，但仍实测复现自我打断；这是流畅回退版，不是防回声验收版",
     "firmware_asset": "speech-stage1-firmware.zip",
     "binaries": {
       "app.bin": {

@@ -14,7 +14,7 @@
 | 光球动效初版 | 历史版本，声音响应及状态过渡随后优化 | [下载](https://github.com/TerryHank/esp-emulator/releases/download/waveshare-history-20261022/carcyd-orb-firmware.zip) | [下载](https://github.com/TerryHank/esp-emulator/releases/download/waveshare-history-20261022/carcyd-orb-source.zip) |
 | 光球平滑版 | 过渡自然，但光球遮字问题随后修复 | [下载](https://github.com/TerryHank/esp-emulator/releases/download/waveshare-history-20261022/carcyd-orb-smooth-firmware.zip) | [下载](https://github.com/TerryHank/esp-emulator/releases/download/waveshare-history-20261022/carcyd-orb-smooth-source.zip) |
 | 光球布局稳定版 | 用户确认横竖屏长回复、历史滑动、照片均正常；语音优化前稳定基线 | [下载](https://github.com/TerryHank/esp-emulator/releases/download/waveshare-orb-layout-20261022/carcyd-orb-layout-firmware.zip) | [下载](https://github.com/TerryHank/esp-emulator/releases/download/waveshare-orb-layout-20261022/carcyd-orb-layout-source.zip) |
-| 第一轮语音优化（当前回退运行） | 用户此前确认正常/轻声对话、主动打断、识图正常；2026-10-22 已重新回退到此版 | [下载](https://github.com/TerryHank/esp-emulator/releases/download/waveshare-history-20261022/speech-stage1-firmware.zip) | 该阶段未单独保留精确源码快照 |
+| 第一轮语音优化（当前回退运行） | 用户已确认回退后不卡顿，但仍实测复现自我打断；这是流畅回退版，不是防回声验收版 | [下载](https://github.com/TerryHank/esp-emulator/releases/download/waveshare-history-20261022/speech-stage1-firmware.zip) | 该阶段未单独保留精确源码快照 |
 | 最新语音优化候选（已知卡顿） | 编译和63项测试通过，但用户报告整机严重卡顿；运行日志存在编码队列满/音频丢帧；已回退，不作为稳定推荐 | [下载](https://github.com/TerryHank/esp-emulator/releases/download/waveshare-speech-20261022-rc1/speech-rc1-firmware.zip) | [下载](https://github.com/TerryHank/esp-emulator/releases/download/waveshare-speech-20261022-rc1/speech-rc1-source.zip) |
 
 各历史版本的对应代码以附带的 source.zip 为准；GitHub 自动生成的仓库 Source code 包是本次归档提交，不表示所有历史固件使用相同代码。源码包未重新构建复现历史二进制，原固件保持原字节。第一轮语音优化没有独立源码快照，明确作为已验收二进制归档。
